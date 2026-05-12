@@ -129,6 +129,8 @@ ws.onmessage = async event => {
 
 if(message.type === 'waiting'){
 
+    nextBtn.disabled = true;
+
     loading.style.display = 'block';
 
     statusText.innerText = 'Waiting for partner...';
@@ -173,6 +175,8 @@ if(message.type === 'chat'){
 }
 
    if(message.type === 'matched'){
+
+    nextBtn.disabled = false;
 
     createPeerConnection();
 
@@ -248,6 +252,8 @@ chatMessages.innerHTML = '';
     }
 
     else if(message.type === 'partner-disconnected'){
+
+        nextBtn.disabled = true;
 
         statusText.innerText = 'Partner disconnected';
 
@@ -332,6 +338,16 @@ sendBtn.onclick = () => {
 };
 
 nextBtn.onclick = () => {
+
+    nextBtn.disabled = true;
+
+setTimeout(() => {
+
+    nextBtn.disabled = false;
+
+}, 2000);
+
+statusText.innerText = 'Searching for new partner...';
 
     // stop peer lama
     if(peerConnection){
