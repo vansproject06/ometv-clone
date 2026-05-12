@@ -76,9 +76,13 @@ broadcastOnlineUsers();
         }
     }
 
-    if(ws.partner) {
-        ws.partner.send(message.toString());
-    }
+   if(
+    ws.partner &&
+    ws.partner.readyState === WebSocket.OPEN &&
+    data.type !== 'next'
+){
+    ws.partner.send(message.toString());
+}
     
     if(waitingUser){
 
