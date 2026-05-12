@@ -137,8 +137,13 @@ if(message.type === 'waiting'){
 
 if(message.type === 'partner-disconnected'){
 
+    if(peerConnection){
+
+    peerConnection.close();
+
     peerConnection = null;
 
+}
     statusText.innerText = 'Partner disconnected';
 
 }
@@ -253,6 +258,14 @@ chatInput.disabled = true;
 sendBtn.disabled = true;
 
         setTimeout(() => {
+
+            if(peerConnection){
+
+    peerConnection.close();
+
+    peerConnection = null;
+
+}
 
     ws.send(JSON.stringify({
 
