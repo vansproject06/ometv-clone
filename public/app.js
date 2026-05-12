@@ -135,6 +135,14 @@ if(message.type === 'waiting'){
 
 }
 
+if(message.type === 'partner-disconnected'){
+
+    peerConnection = null;
+
+    statusText.innerText = 'Partner disconnected';
+
+}
+
 if(message.type === 'chat'){
 
     chatMessages.innerHTML += `
@@ -255,6 +263,8 @@ if(message.type === 'chat'){
 };
 
 sendBtn.onclick = () => {
+
+    if (!peerConnection) return;
 
     const text = chatInput.value;
 
