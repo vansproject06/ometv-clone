@@ -173,6 +173,12 @@ if(message.type === 'chat'){
 
     statusText.innerText = 'Partner connected';
 
+    chatInput.disabled = false;
+
+sendBtn.disabled = false;
+
+chatMessages.innerHTML = '';
+
     if(connectSound){
 
     connectSound.play().catch(() => {});
@@ -239,6 +245,12 @@ if(message.type === 'chat'){
         statusText.innerText = 'Partner disconnected';
 
         loading.style.display = 'block';
+
+        chatMessages.innerHTML = '';
+
+chatInput.disabled = true;
+
+sendBtn.disabled = true;
 
         setTimeout(() => {
 
