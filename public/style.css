@@ -1,0 +1,356 @@
+body{
+    background:red !important;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0f0f0f;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+
+}
+
+/*
+=========================
+STATUS
+=========================
+*/
+
+#status{
+
+    position:absolute;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    background:rgba(0,0,0,0.6);
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    z-index:100;
+
+    backdrop-filter:blur(10px);
+
+}
+
+/*
+=========================
+VIDEOS
+=========================
+*/
+
+video{
+
+   background:black;
+
+object-fit:cover;
+
+}
+
+/*
+=========================
+REMOTE VIDEO
+=========================
+*/
+
+#remoteVideo{
+
+    background:black;
+
+object-fit:cover;
+
+    position:absolute;
+
+width:100vw;
+height:100vh;
+
+top:0;
+left:0;
+
+z-index:1;
+
+}
+
+/*
+=========================
+LOCAL VIDEO
+=========================
+*/
+
+#localVideo{
+
+    background:black;
+
+    position:absolute;
+
+width:220px;
+height:300px;
+
+top:20px;
+right:20px;
+
+border-radius:20px;
+
+border:3px solid white;
+
+object-fit:cover;
+
+z-index:10;
+
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+}
+
+/*
+=========================
+NEXT BUTTON
+=========================
+*/
+
+#nextBtn{
+
+    position:absolute;
+
+    bottom:30px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff2e63;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    transition:0.3s;
+
+    box-shadow:0 5px 20px rgba(255,46,99,0.4);
+
+}
+
+#nextBtn:hover{
+
+    transform:translateX(-50%) scale(1.05);
+
+    background:#ff4f7b;
+
+}
+
+#onlineCount{
+
+    position:absolute;
+
+    top:80px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    background:rgba(0,0,0,0.5);
+
+    padding:8px 20px;
+
+    border-radius:20px;
+
+    z-index:100;
+
+    backdrop-filter:blur(10px);
+
+    font-size:15px;
+
+}
+
+#loading{
+
+    position:absolute;
+
+    top:130px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:5px solid rgba(255,255,255,0.2);
+
+    border-top:5px solid #ff2e63;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    z-index:100;
+
+}
+
+@keyframes spin{
+
+    0%{
+        transform:translateX(-50%) rotate(0deg);
+    }
+
+    100%{
+        transform:translateX(-50%) rotate(360deg);
+    }
+
+}
+
+#chatContainer{
+
+    position:absolute;
+
+    bottom:20px;
+    left:20px;
+
+    width:320px;
+    height:420px;
+
+    background:rgba(0,0,0,0.6);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+
+    z-index:100;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+#chatMessages{
+
+    flex:1;
+
+    padding:15px;
+
+    overflow-y:auto;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+#chatInputArea{
+
+    display:flex;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+
+}
+
+#chatInput{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+}
+
+#sendBtn{
+
+    border:none;
+
+    background:#ff2e63;
+
+    color:white;
+
+    padding:0 20px;
+
+    cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+    #localVideo{
+
+        width:120px;
+        height:170px;
+
+        top:10px;
+        right:10px;
+
+    }
+
+    #chatContainer{
+
+        width:90%;
+
+        height:250px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        bottom:90px;
+
+    }
+
+    #nextBtn{
+
+        width:90%;
+
+        bottom:20px;
+
+        padding:15px;
+
+        font-size:18px;
+
+    }
+
+    #status{
+
+        font-size:15px;
+
+        padding:10px 18px;
+
+    }
+
+    #onlineCount{
+
+        font-size:13px;
+
+    }
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OmeTV Clone</title>
+
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+
+<h2 id="status">Waiting for partner...</h2>
+
+<div id="loading"></div>
+
+<h3 id="onlineCount">0 users online</h3>
+
+<div id="chatContainer">
+
+    <div id="chatMessages"></div>
+
+    <div id="chatInputArea">
+
+        <input type="text" id="chatInput" placeholder="Type message...">
+
+        <button id="sendBtn">Send</button>
+
+    </div>
+
+</div>
+
+    <button id="nextBtn">NEXT</button>
+
+   <video id="remoteVideo" autoplay playsinline></video>
+
+<video id="localVideo" autoplay muted playsinline></video>
+
+<audio id="connectSound" src="connect.mp3"></audio>
+
+<audio id="disconnectSound" src="disconnect.mp3"></audio>
+
+<script src="app.js"></script>
+
+</body>
+</html>
