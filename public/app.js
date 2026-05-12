@@ -187,6 +187,12 @@ if(message.type === 'chat'){
 
    if(message.type === 'matched'){
 
+    startScreen.style.display = 'none';
+
+nextBtn.style.display = 'block';
+
+stopBtn.style.display = 'block';
+
     nextBtn.disabled = false;
 
     nextBtn.innerText = 'NEXT';
