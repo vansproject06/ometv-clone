@@ -108,7 +108,6 @@ broadcastOnlineUsers();
     }
 
     return;
-}
 
         if(ws.partner && ws.partner.readyState === WebSocket.OPEN){
 
@@ -148,8 +147,6 @@ broadcastOnlineUsers();
 
     });
 
-});
-
 function broadcastOnlineUsers(){
 
     wss.clients.forEach(client => {
@@ -168,6 +165,8 @@ function broadcastOnlineUsers(){
     });
 
 }
+
+});
 
 const PORT = process.env.PORT || 3000;
 
