@@ -2,6 +2,11 @@
 const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 const nextBtn = document.getElementById('nextBtn');
+const startBtn = document.getElementById('startBtn');
+
+const stopBtn = document.getElementById('stopBtn');
+
+const startScreen = document.getElementById('startScreen');
 const statusText = document.getElementById('status');
 const onlineCount = document.getElementById('onlineCount');
 const loading = document.getElementById('loading');
@@ -14,6 +19,10 @@ const sendBtn = document.getElementById('sendBtn');
 const connectSound = document.getElementById('connectSound');
 
 const disconnectSound = document.getElementById('disconnectSound');
+
+nextBtn.style.display = 'none';
+
+stopBtn.style.display = 'none';
 
 let localStream;
 let peerConnection;
@@ -380,3 +389,39 @@ statusText.innerText = 'Searching for new partner...';
     loading.style.display = 'block';
 
 };
+
+startBtn.onclick = () => {
+
+    startScreen.style.display = 'none';
+
+    nextBtn.style.display = 'block';
+
+    stopBtn.style.display = 'block';
+
+    ws.send(JSON.stringify({
+        type:'next'
+    }));
+
+}
+
+stopBtn.onclick = () => {
+
+    if(peerConnection){
+
+        peerConnection.close();
+
+        peerConnection = null;
+
+    }
+
+    remoteVideo.srcObject = null;
+
+    nextBtn.style.display = 'none';
+
+    stopBtn.style.display = 'none';
+
+    startScreen.style.display = 'flex';
+
+    statusText.innerText = 'Press start to begin';
+
+}
