@@ -61,24 +61,25 @@ broadcastOnlineUsers();
 
     ws.on('message', message => {
 
-        const data = JSON.parse(message);
+    const data = JSON.parse(message);
 
-        if(data.type === 'next'){
+    if(data.type === 'next') {
 
-    if(ws.partner){
+        if(ws.partner) {
 
-        ws.partner.send(JSON.stringify({
+            ws.partner.send(JSON.stringify({
+                type: 'partner-disconnected'
+            }));
 
-            type:'partner-disconnected'
-
-        }));
-
-        ws.partner.partner = null;
-
-        ws.partner = null;
-
+            ws.partner.partner = null;
+            ws.partner = null;
+        }
     }
 
+    if(ws.partner) {
+        ws.partner.send(message.toString());
+    }
+    
     if(waitingUser){
 
         ws.partner = waitingUser;
