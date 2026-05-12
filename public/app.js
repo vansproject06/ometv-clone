@@ -174,6 +174,8 @@ if(message.type === 'chat'){
 
    if(message.type === 'matched'){
 
+    createPeerConnection();
+
     loading.style.display = 'none';
 
     statusText.innerText = 'Partner connected';
@@ -264,6 +266,8 @@ sendBtn.disabled = true;
     peerConnection.close();
 
     peerConnection = null;
+
+    remoteVideo.srcObject = null;
 
 }
 
