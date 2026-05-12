@@ -26,6 +26,8 @@ broadcastOnlineUsers();
 
     console.log('User connected');
 
+    console.log('WAITING USER:', waitingUser ? 'YES' : 'NO');
+
     if(waitingUser){
 
         ws.partner = waitingUser;
