@@ -20,6 +20,14 @@ let peerConnection;
 
 const ws = new WebSocket('wss://ometv-clone-px00.onrender.com');
 
+ws.onopen = () => {
+    console.log('WebSocket Connected');
+};
+
+ws.onerror = (err) => {
+    console.log('WebSocket Error', err);
+};
+
 const configuration = {
 
     iceServers:[
