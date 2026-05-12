@@ -354,3 +354,15 @@ NEXT BUTTON
     }
 
 }
+
+#nextBtn:disabled{
+
+    background: #555;
+
+    box-shadow: none;
+
+    cursor: not-allowed;
+
+    opacity: 0.6;
+
+}

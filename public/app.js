@@ -131,6 +131,8 @@ if(message.type === 'waiting'){
 
     nextBtn.disabled = true;
 
+    nextBtn.innerText = 'SEARCHING...';
+
     loading.style.display = 'block';
 
     statusText.innerText = 'Waiting for partner...';
@@ -177,6 +179,8 @@ if(message.type === 'chat'){
    if(message.type === 'matched'){
 
     nextBtn.disabled = false;
+
+    nextBtn.innerText = 'NEXT';
 
     createPeerConnection();
 
@@ -254,6 +258,8 @@ chatMessages.innerHTML = '';
     else if(message.type === 'partner-disconnected'){
 
         nextBtn.disabled = true;
+
+        nextBtn.innerText = 'SEARCHING...';
 
         statusText.innerText = 'Partner disconnected';
 
