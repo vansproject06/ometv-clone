@@ -84,7 +84,7 @@ broadcastOnlineUsers();
     ws.partner.send(message.toString());
 }
     
-    if(waitingUser){
+    if(!ws.partner && waitingUser){
 
         ws.partner = waitingUser;
         waitingUser.partner = ws;
@@ -101,7 +101,7 @@ broadcastOnlineUsers();
 
         waitingUser = null;
 
-    }else{
+  }else if(!ws.partner){
 
         waitingUser = ws;
 
