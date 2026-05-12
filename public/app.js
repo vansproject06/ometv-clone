@@ -18,7 +18,7 @@ const disconnectSound = document.getElementById('disconnectSound');
 let localStream;
 let peerConnection;
 
-const ws = new WebSocket('wss://ometv-clone-px00.onrender.com/');
+const ws = new WebSocket(`wss://${window.location.host}`);
 
 ws.onopen = () => {
     console.log('WebSocket Connected');
