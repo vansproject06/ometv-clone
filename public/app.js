@@ -78,8 +78,6 @@ async function startMedia(){
 
     localVideo.srcObject = localStream;
 
-    createPeerConnection();
-
 }
 
 startMedia();
@@ -204,8 +202,6 @@ stopBtn.style.display = 'block';
     nextBtn.disabled = false;
 
     nextBtn.innerText = 'NEXT';
-
-    createPeerConnection();
 
     loading.style.display = 'none';
 
@@ -411,6 +407,8 @@ startBtn.onclick = () => {
     nextBtn.style.display = 'block';
 
     stopBtn.style.display = 'block';
+
+    createPeerConnection();
 
     ws.send(JSON.stringify({
         type:'next'
