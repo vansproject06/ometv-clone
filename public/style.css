@@ -1,6 +1,4 @@
-body{
-    background:red !important;
-}
+
 
 *{
     margin:0;
@@ -10,7 +8,12 @@ body{
 
 body{
 
-    background:#0f0f0f;
+   background:linear-gradient(
+    135deg,
+    #0f0f0f,
+    #1a1a2e,
+    #16213e
+);
     overflow:hidden;
     font-family:Arial, sans-serif;
 
@@ -244,6 +247,11 @@ NEXT BUTTON
 
     width:320px;
     height:420px;
+
+    background: rgba(255,255,255,0.05);      /* lebih glass */
+border: 1px solid rgba(255,255,255,0.08); /* outline glass */
+border-radius: 20px;                       /* radius tetap */
+box-shadow: 0 8px 30px rgba(0,0,0,0.3);   /* shadow lebih premium */
 
     background:rgba(0,0,0,0.6);
 
