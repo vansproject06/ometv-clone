@@ -203,6 +203,8 @@ stopBtn.style.display = 'block';
 
     nextBtn.innerText = 'NEXT';
 
+    createPeerConnection();
+
     loading.style.display = 'none';
 
     statusText.innerText = 'Partner connected';
@@ -407,8 +409,6 @@ startBtn.onclick = () => {
     nextBtn.style.display = 'block';
 
     stopBtn.style.display = 'block';
-
-    createPeerConnection();
 
     ws.send(JSON.stringify({
         type:'next'
