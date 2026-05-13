@@ -477,8 +477,8 @@ transition:0.3s;
 #cameraBtn{
 
     position:fixed;
-    bottom:120px;
-    left:40px;
+   top:20px;
+left:20px;
     z-index:99999;
 
    display:flex;
@@ -496,8 +496,8 @@ transition:0.3s;
 #muteBtn{
 
     position:fixed;
-    bottom:120px;
-    right:40px;
+   top:90px;
+left:20px;
     z-index:99999;
 
   display:flex;
