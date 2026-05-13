@@ -438,3 +438,41 @@ NEXT BUTTON
     z-index:99999;
 
 }
+
+#cameraBtn,
+#muteBtn{
+
+    position:fixed;
+
+    bottom:120px;
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-size:28px;
+
+    background:#ff2d6f;
+
+    color:white;
+
+    z-index:99999;
+
+    cursor:pointer;
+
+}
+
+#cameraBtn{
+
+    left:40px;
+
+}
+
+#muteBtn{
+
+    right:40px;
+
+}

@@ -444,9 +444,13 @@ muteBtn.onclick = () => {
 
     micMuted = !micMuted;
 
-    localStream.getAudioTracks()[0].enabled = !micMuted;
+    localStream
+        .getAudioTracks()[0]
+        .enabled = !micMuted;
 
-    muteBtn.innerText = micMuted ? 'UNMUTE' : 'MUTE';
+    muteBtn.innerText = micMuted
+        ? '🔇'
+        : '🎤';
 
 }
 
@@ -454,31 +458,37 @@ cameraBtn.onclick = async () => {
 
     usingFrontCamera = !usingFrontCamera;
 
+    // stop kamera lama
+    localStream.getTracks().forEach(track => track.stop());
+
+    // ambil kamera baru
     const newStream = await navigator.mediaDevices.getUserMedia({
 
         video:{
-            facingMode: usingFrontCamera ? 'user' : 'environment'
+            facingMode: usingFrontCamera
+                ? 'user'
+                : { exact:'environment' }
         },
 
         audio:true
 
     });
 
+    // ganti video local
+    localVideo.srcObject = newStream;
+
+    // replace track ke partner
     const videoTrack = newStream.getVideoTracks()[0];
 
-    const sender = peerConnection.getSenders().find(s =>
-
-        s.track.kind === 'video'
-
-    );
+    const sender = peerConnection
+        .getSenders()
+        .find(s => s.track.kind === 'video');
 
     if(sender){
 
-        sender.replaceTrack(videoTrack);
+        await sender.replaceTrack(videoTrack);
 
     }
-
-    localVideo.srcObject = newStream;
 
     localStream = newStream;
 
