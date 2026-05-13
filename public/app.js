@@ -2,6 +2,9 @@
 const localVideo = document.getElementById('localVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 const nextBtn = document.getElementById('nextBtn');
+const cameraBtn = document.getElementById('cameraBtn');
+
+const muteBtn = document.getElementById('muteBtn');
 const startBtn = document.getElementById('startBtn');
 
 const stopBtn = document.getElementById('stopBtn');
@@ -25,6 +28,11 @@ nextBtn.style.display = 'none';
 stopBtn.style.display = 'none';
 
 let localStream;
+
+let usingFrontCamera = true;
+
+let micMuted = false;
+
 let peerConnection;
 
 const ws = new WebSocket(`wss://${window.location.host}`);
@@ -429,5 +437,49 @@ stopBtn.onclick = () => {
     startScreen.style.display = 'flex';
 
     statusText.innerText = 'Press start to begin';
+
+}
+
+muteBtn.onclick = () => {
+
+    micMuted = !micMuted;
+
+    localStream.getAudioTracks()[0].enabled = !micMuted;
+
+    muteBtn.innerText = micMuted ? 'UNMUTE' : 'MUTE';
+
+}
+
+cameraBtn.onclick = async () => {
+
+    usingFrontCamera = !usingFrontCamera;
+
+    const newStream = await navigator.mediaDevices.getUserMedia({
+
+        video:{
+            facingMode: usingFrontCamera ? 'user' : 'environment'
+        },
+
+        audio:true
+
+    });
+
+    const videoTrack = newStream.getVideoTracks()[0];
+
+    const sender = peerConnection.getSenders().find(s =>
+
+        s.track.kind === 'video'
+
+    );
+
+    if(sender){
+
+        sender.replaceTrack(videoTrack);
+
+    }
+
+    localVideo.srcObject = newStream;
+
+    localStream = newStream;
 
 }

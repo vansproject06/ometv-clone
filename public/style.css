@@ -420,3 +420,21 @@ NEXT BUTTON
     color:white;
 
 }
+
+#cameraBtn{
+
+    position:fixed;
+    bottom:120px;
+    left:40px;
+    z-index:99999;
+
+}
+
+#muteBtn{
+
+    position:fixed;
+    bottom:120px;
+    right:40px;
+    z-index:99999;
+
+}
