@@ -394,3 +394,29 @@ NEXT BUTTON
     color:white;
 
 }
+
+#nextBtn{
+
+    position:fixed;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-120%);
+    z-index:99999;
+
+}
+
+#stopBtn{
+
+    position:fixed;
+    bottom:40px;
+    left:50%;
+    transform:translateX(20%);
+    z-index:99999;
+
+    display:block !important;
+
+    background:red !important;
+
+    color:white;
+
+}
