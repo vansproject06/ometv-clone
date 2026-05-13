@@ -654,3 +654,41 @@ transition:0.3s;
     margin-right:6px;
 
 }
+
+#chatHeader{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 15px;
+
+    background:rgba(255,255,255,0.05);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    font-weight:bold;
+
+}
+
+#toggleChatBtn{
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}

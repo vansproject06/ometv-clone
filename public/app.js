@@ -19,6 +19,12 @@ const onlineCount = document.getElementById('onlineCount');
 const loading = document.getElementById('loading');
 const chatMessages = document.getElementById('chatMessages');
 
+const chatContainer = document.getElementById('chatContainer');
+
+const toggleChatBtn = document.getElementById('toggleChatBtn');
+
+let chatMinimized = false;
+
 const chatInput = document.getElementById('chatInput');
 
 const sendBtn = document.getElementById('sendBtn');
@@ -514,5 +520,27 @@ cameraBtn.onclick = async () => {
     }
 
     localStream = newStream;
+
+}
+
+toggleChatBtn.onclick = () => {
+
+    if(!chatMinimized){
+
+        chatContainer.style.height = '60px';
+
+        toggleChatBtn.innerText = '+';
+
+        chatMinimized = true;
+
+    }else{
+
+        chatContainer.style.height = '420px';
+
+        toggleChatBtn.innerText = '−';
+
+        chatMinimized = false;
+
+    }
 
 }
