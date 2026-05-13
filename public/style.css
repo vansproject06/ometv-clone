@@ -73,6 +73,12 @@ REMOTE VIDEO
 
 object-fit:cover;
 
+border-radius:12px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.35);
+
+animation:fadeInVideo 0.5s ease;
+
     position:absolute;
 
 width:100vw;
@@ -93,6 +99,10 @@ LOCAL VIDEO
 
 #localVideo{
 
+    border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
     background:black;
 
     position:absolute;
@@ -112,6 +122,8 @@ object-fit:cover;
 z-index:10;
 
 box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+animation:fadeInVideo 0.5s ease;
 
 }
 
@@ -246,6 +258,11 @@ NEXT BUTTON
     flex-direction:column;
 
     overflow:hidden;
+
+    font-family: 'Inter', 'Roboto', sans-serif;
+color: white;
+overflow-y: auto;
+box-shadow:0 5px 20px rgba(0,0,0,0.25);
 
 }
 
@@ -403,6 +420,24 @@ NEXT BUTTON
     transform:translateX(-120%);
     z-index:99999;
 
+ display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#ff2e63,#ff4f81);
+
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
 }
 
 #stopBtn{
@@ -412,6 +447,16 @@ NEXT BUTTON
     left:50%;
     transform:translateX(20%);
     z-index:99999;
+
+ display:flex;
+justify-content:center;
+align-items:center;
+width:60px;
+height:60px;
+border-radius:50%;
+background: linear-gradient(135deg,#ff3f5c,#ff6a7a);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
 
     display:block !important;
 
@@ -428,6 +473,16 @@ NEXT BUTTON
     left:40px;
     z-index:99999;
 
+   display:flex;
+justify-content:center;
+align-items:center;
+width:60px;
+height:60px;
+border-radius:50%;
+background: linear-gradient(135deg,#3f9fff,#71b7ff);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
+
 }
 
 #muteBtn{
@@ -437,6 +492,15 @@ NEXT BUTTON
     right:40px;
     z-index:99999;
 
+  display:flex;
+justify-content:center;
+align-items:center;
+width:60px;
+height:60px;
+border-radius:50%;
+background: linear-gradient(135deg,#00c853,#33e07d);
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
 }
 
 #cameraBtn,
@@ -474,5 +538,63 @@ NEXT BUTTON
 #muteBtn{
 
     right:40px;
+
+}
+
+#nextBtn:hover,
+#stopBtn:hover,
+#cameraBtn:hover,
+#muteBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.spinner{
+
+    border:4px solid rgba(255,255,255,0.2);
+
+    border-top:4px solid #ff2e63;
+
+    border-radius:50%;
+
+    width:40px;
+
+    height:40px;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+@keyframes spin{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes fadeInVideo{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
 
 }

@@ -4,10 +4,12 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+
     <title>MeetMegle</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
    
 </head>
 
@@ -16,6 +18,8 @@
     <div id="startScreen">
 
     <button id="startBtn">START</button>
+
+    <div id="loader" class="spinner" style="display:none;"></div>
 
 </div>
 
@@ -39,13 +43,15 @@
 
 </div>
 
-    <button id="nextBtn">NEXT</button>
+    <button id="nextBtn"><i class="fa-solid fa-forward"></i></button>
 
-    <button id="stopBtn">STOP</button>
+    <button id="stopBtn"><i class="fa-solid fa-phone-slash"></i></button>
 
-   <button id="cameraBtn">🔄</button>
+   <button id="cameraBtn"><i class="fa-solid fa-camera-rotate"></i>
+</button>
 
-<button id="muteBtn">🎤</button>
+<button id="muteBtn"><i class="fa-solid fa-microphone"></i>
+</button>
 
    <video id="remoteVideo" autoplay playsinline></video>
 

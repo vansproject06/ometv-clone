@@ -7,6 +7,8 @@ const cameraBtn = document.getElementById('cameraBtn');
 const muteBtn = document.getElementById('muteBtn');
 const startBtn = document.getElementById('startBtn');
 
+const loader = document.getElementById('loader');
+
 const stopBtn = document.getElementById('stopBtn');
 
 const startScreen = document.getElementById('startScreen');
@@ -192,6 +194,8 @@ if(message.type === 'chat'){
 }
 
    if(message.type === 'matched'){
+
+    loader.style.display = 'none';
 
     startScreen.style.display = 'none';
 
@@ -405,6 +409,8 @@ statusText.innerText = 'Searching for new partner...';
 startBtn.onclick = () => {
 
     startScreen.style.display = 'none';
+
+    loader.style.display = 'block';
 
     nextBtn.style.display = 'block';
 
