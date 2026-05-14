@@ -717,6 +717,10 @@ transition:0.3s;
 
     display:inline-block;
 
+    pointer-events:none;
+
+user-select:none;
+
     padding:12px 18px;
 
     background:rgba(0,0,0,0.55);
