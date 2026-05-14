@@ -703,11 +703,9 @@ transition:0.3s;
 
     transform:translateX(-50%);
 
-    width:80%;
+    max-width:80%;
 
-    text-align:center;
-
-    z-index:99999;
+    z-index:10;
 
     pointer-events:none;
 
@@ -715,11 +713,11 @@ transition:0.3s;
 
 #subtitleText{
 
-    display:inline-block;
-
     pointer-events:none;
 
 user-select:none;
+
+    display:inline-block;
 
     padding:12px 18px;
 
@@ -744,6 +742,8 @@ user-select:none;
 }
 
 #ccBtn{
+
+    user-select:none;
 
     position:fixed;
 
