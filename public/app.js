@@ -23,6 +23,12 @@ const chatContainer = document.getElementById('chatContainer');
 
 const toggleChatBtn = document.getElementById('toggleChatBtn');
 
+const subtitleText = document.getElementById('subtitleText');
+
+const ccBtn = document.getElementById('ccBtn');
+
+let subtitleEnabled = true;
+
 let chatMinimized = false;
 
 const chatInput = document.getElementById('chatInput');
@@ -542,5 +548,99 @@ toggleChatBtn.onclick = () => {
         chatMinimized = false;
 
     }
+
+}
+
+ccBtn.onclick = () => {
+
+    subtitleEnabled = !subtitleEnabled;
+
+    if(subtitleEnabled){
+
+        ccBtn.innerText = 'CC ON';
+
+        subtitleText.style.display = 'inline-block';
+
+    }else{
+
+        ccBtn.innerText = 'CC OFF';
+
+        subtitleText.style.display = 'none';
+
+    }
+
+}
+
+const SpeechRecognition =
+window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if(SpeechRecognition){
+
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = true;
+
+    recognition.interimResults = true;
+
+    recognition.lang = 'en-US';
+
+    recognition.onresult = async(event) => {
+
+        let transcript = '';
+
+        for(let i = event.resultIndex; i < event.results.length; i++){
+
+            transcript += event.results[i][0].transcript;
+
+        }
+
+        if(subtitleEnabled){
+
+            const translated = await translateText(transcript);
+
+            subtitleText.innerText = translated;
+
+        }
+
+    }
+
+    recognition.start();
+
+}
+
+const SpeechRecognition =
+window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if(SpeechRecognition){
+
+    const recognition = new SpeechRecognition();
+
+    recognition.continuous = true;
+
+    recognition.interimResults = true;
+
+    recognition.lang = 'en-US';
+
+    recognition.onresult = async(event) => {
+
+        let transcript = '';
+
+        for(let i = event.resultIndex; i < event.results.length; i++){
+
+            transcript += event.results[i][0].transcript;
+
+        }
+
+        if(subtitleEnabled){
+
+            const translated = await translateText(transcript);
+
+            subtitleText.innerText = translated;
+
+        }
+
+    }
+
+    recognition.start();
 
 }

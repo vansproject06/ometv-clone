@@ -692,3 +692,79 @@ transition:0.3s;
     font-size:20px;
 
 }
+
+#subtitleContainer{
+
+    position:fixed;
+
+    bottom:140px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:80%;
+
+    text-align:center;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+}
+
+#subtitleText{
+
+    display:inline-block;
+
+    padding:12px 18px;
+
+    background:rgba(0,0,0,0.55);
+
+    color:white;
+
+    border-radius:16px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.35);
+
+    max-width:100%;
+
+    word-wrap:break-word;
+
+}
+
+#ccBtn{
+
+    position:fixed;
+
+    top:180px;
+
+    left:20px;
+
+    z-index:99999;
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+}
