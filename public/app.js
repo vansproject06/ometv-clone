@@ -7,8 +7,6 @@ const cameraBtn = document.getElementById('cameraBtn');
 const muteBtn = document.getElementById('muteBtn');
 const startBtn = document.getElementById('startBtn');
 
-const genderRadios = document.getElementsByName('gender');
-
 const loader = document.getElementById('loader');
 
 const stopBtn = document.getElementById('stopBtn');
@@ -424,24 +422,11 @@ startBtn.onclick = () => {
 
     stopBtn.style.display = 'block';
 
-    let selectedGender = 'any';
 
-for(const radio of genderRadios){
-
-    if(radio.checked){
-
-        selectedGender = radio.value;
-
-        break;
-
-    }
-
-}
 
     ws.send(JSON.stringify({
         type:'next',
 
-        gender:selectedGender
         
     }));
 
